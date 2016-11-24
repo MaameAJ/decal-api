@@ -33,11 +33,16 @@ class DecalApi {
     /**
      * Example of an Endpoint
      */
-     protected function example() {
+     protected function appointment() {
         if ($this->method == 'GET') {
+            //check by date, check by client
             return "Your name is " . $this->User->name;
         } else {
             return "Only accepts GET requests";
         }
+     }
+     
+     protected function all() {
+         //grab all the functions depending on API
      }
 }
