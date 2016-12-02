@@ -33,12 +33,19 @@ class DecalApi {
     /**
      * Example of an Endpoint
      */
-     protected function appointment() {
+     protected function appointment($data) {
         if ($this->method == 'GET') {
-            //check by date, check by client
-            return "Your name is " . $this->User->name;
+            //return based on date or id
+            return "NotImplementedYet";
+        } else if($this->method == 'POST') {
+            //$client = getclient();
+            $dt = new DateTime(); //TODO figure out how to sort datetime $data['date'], $data['time']
+            $appt = new Appointment($client, $dt); //TODO add this constructor
+            return "NotImplementedYet"; //addAppointment
+        } else if($this->method == 'DELETE') {
+            return "NotImplementedYet"; //deleteAppt($data[id]);
         } else {
-            return "Only accepts GET requests";
+             return "Does not accept this type of request.";
         }
      }
      
